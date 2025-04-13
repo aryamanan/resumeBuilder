@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Professional Resume Builder</h1>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </header>
+
+        <div class="resume-builder">
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">Personal Info</div>
+                <div class="progress-step" data-step="2">Education</div>
+                <div class="progress-step" data-step="3">Experience</div>
+                <div class="progress-step" data-step="4">Skills</div>
+                <div class="progress-step" data-step="5">Preview</div>
+            </div>
+
+            <form id="resumeForm">
+                <!-- Personal Information Section -->
+                <div class="form-section active" id="personal-info">
+                    <h2>Personal Information</h2>
+                    <div class="form-group">
+                        <input type="text" id="fullName" placeholder="Full Name" required>
+                        <input type="email" id="email" placeholder="Email" required>
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                        <input type="text" id="location" placeholder="Location" required>
+                        <textarea id="summary" placeholder="Professional Summary" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="form-section" id="education">
+                    <h2>Education</h2>
+                    <div class="form-group" id="education-container">
+                        <div class="education-entry">
+                            <input type="text" placeholder="Institution" required>
+                            <input type="text" placeholder="Degree" required>
+                            <input type="text" placeholder="Field of Study" required>
+                            <input type="text" placeholder="Start Date" required>
+                            <input type="text" placeholder="End Date" required>
+                            <textarea placeholder="Achievements" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="add-entry-btn" onclick="addEducationEntry()">Add Another Education</button>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="form-section" id="experience">
+                    <h2>Work Experience</h2>
+                    <div class="form-group" id="experience-container">
+                        <div class="experience-entry">
+                            <input type="text" placeholder="Company Name" required>
+                            <input type="text" placeholder="Position" required>
+                            <input type="text" placeholder="Start Date" required>
+                            <input type="text" placeholder="End Date" required>
+                            <textarea placeholder="Responsibilities and Achievements" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="add-entry-btn" onclick="addExperienceEntry()">Add Another Experience</button>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="form-section" id="skills">
+                    <h2>Skills</h2>
+                    <div class="form-group">
+                        <div class="skills-category">
+                            <h3>Technical Skills</h3>
+                            <div class="skills-input">
+                                <input type="text" placeholder="Add skill">
+                                <button type="button" class="add-skill-btn">Add</button>
+                            </div>
+                            <div class="skills-list" id="technical-skills"></div>
+                        </div>
+                        <div class="skills-category">
+                            <h3>Soft Skills</h3>
+                            <div class="skills-input">
+                                <input type="text" placeholder="Add skill">
+                                <button type="button" class="add-skill-btn">Add</button>
+                            </div>
+                            <div class="skills-list" id="soft-skills"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template Selection -->
+                <div class="form-section" id="template-selection">
+                    <h2>Choose Template</h2>
+                    <div class="template-grid">
+                        <div class="template-card" data-template="modern">
+                            <img src="templates/modern-preview.png" alt="Modern Template">
+                            <h3>Modern</h3>
+                            <p>Clean and professional design</p>
+                        </div>
+                        <div class="template-card" data-template="classic">
+                            <img src="templates/classic-preview.png" alt="Classic Template">
+                            <h3>Classic</h3>
+                            <p>Traditional and formal layout</p>
+                        </div>
+                        <div class="template-card" data-template="creative">
+                            <img src="templates/creative-preview.png" alt="Creative Template">
+                            <h3>Creative</h3>
+                            <p>Modern with creative elements</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="form-navigation">
+                    <button type="button" class="nav-btn" id="prevBtn">Previous</button>
+                    <button type="button" class="nav-btn" id="nextBtn">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
